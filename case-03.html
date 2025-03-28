@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>case-03</title>
+    <link rel="stylesheet" href="assets/lib/normalize.css">
+
+    <style>
+        body{
+            overflow: hidden;
+        }
+
+        :root{
+            --section-width: 100vw;
+            --section-height: 100vh;
+            --div-width: 200px;
+            --div-height: 100px;
+        }
+
+        section{
+            width: var(--section-width);
+            height: var(--section-height);
+        }
+
+        section>div{
+            width: var(--div-width);
+            height: var(--div-height);
+            border-radius: 20px;
+
+            animation-name: div-move-and-rotate;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes div-move-and-rotate {
+            0%{
+                margin: 0;
+                transform: rotate(0deg);
+                background-color: blue;
+            }25%{
+                 margin-left: calc(var(--section-width) - var(--div-width));
+                 margin-top: 0;
+                 transform: rotate(180deg);
+                 background-color: yellow;
+             }50%{
+                  margin-top: calc(var(--section-height) - var(--div-width));
+                  margin-left: calc(var(--section-width) - var(--div-width));
+                  transform: rotate(360deg);
+                  background-color: red;
+              }75%{
+                   margin-left: 0;
+                   margin-top: calc(var(--section-height) - var(--div-width));
+                   transform: rotate(540deg);
+                   background-color: deeppink;
+               }100%{
+                    margin: 0;
+                    transform: rotate(720deg);
+                    background-color: orange;
+                }
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <section>
+        <div></div>
+    </section>
+
+</body>
+</html>
